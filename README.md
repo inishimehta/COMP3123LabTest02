@@ -43,12 +43,17 @@ Weather App is a responsive weather dashboard developed as part of Lab Test 2. I
     The app will initialize at `http://localhost:3000`.
 
 ## 📡 API Integration Details
-This project consumes two primary endpoints from OpenWeatherMap:
+This project consumes two primary endpoints from OpenWeatherMap. The specific fields displayed in the UI are mapped as follows:
 
-| Endpoint Type | Usage | Data Points Used |
+| UI Label | API Field Path | Example Value |
 | :--- | :--- | :--- |
-| **Current Weather** | Main Card Display | `temp`, `feels_like`, `humidity`, `wind.speed`, `sys.country` |
-| **5-Day Forecast** | Bottom Forecast Row | `list.dt_txt` (filtered for 12:00 PM daily), `weather.icon` |
+| **Humidity** | `main.humidity` | `81%` |
+| **Wind** | `wind.speed` | `15.2 km/h` |
+| **Air Pressure** | `main.pressure` | `1009 mb` |
+| **Max Temp** | `main.temp_max` | `1°C` |
+| **Min Temp** | `main.temp_min` | `0°C` |
+| **Forecast** | `list.dt_txt` & `weather.icon` | *Daily 12:00 PM data* |
+| **Predictability** | *Static/Calculated* | `71%` |
 
 ## 📸 Screen Previews
 *(Please refer to the attached DOCX submission file for high-resolution screenshots of the Welcome Screen, City Search Results, and Postman API Validation.)*
