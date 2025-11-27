@@ -11,12 +11,15 @@ export default function WeatherCard({ weatherData, forecastData }) {
     const day = days[d.getDay()];
     const date = d.getDate();
     const month = months[d.getMonth()];
-    const year = d.getFullYear(); // Added year for clarity
+    const year = d.getFullYear();
 
     return `${day}, ${date} ${month} ${year}`;
   };
 
-  // Helper to get day name from date string
+  const getTime = () => {
+    return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  };
+
   const getDayName = (dateStr) => {
       const date = new Date(dateStr);
       return date.toLocaleDateString("en-US", { weekday: 'short' });
@@ -24,10 +27,12 @@ export default function WeatherCard({ weatherData, forecastData }) {
 
   return (
     <div className="weather-card">
-      {/* LEFT SIDE */}
       <div className="left-panel">
         <div className="header-info">
           <h2 className="day-name">{dateBuilder(new Date())}</h2>
+          <p style={{ fontSize: '1.2rem', margin: '5px 0', fontWeight: '500', opacity: '0.9' }}>
+            {getTime()}
+          </p>
           <p className="location">{weatherData.name}, {weatherData.sys.country}</p>
         </div>
         
@@ -38,9 +43,7 @@ export default function WeatherCard({ weatherData, forecastData }) {
         </div>
       </div>
       
-      {/* RIGHT SIDE */}
       <div className="right-panel">
-        {/* Details Grid */}
         <div className="details-grid">
             <div className="detail-row">
             <span className="label">Predictability</span>
@@ -68,7 +71,6 @@ export default function WeatherCard({ weatherData, forecastData }) {
             </div>
         </div>
 
-        {/* FORECAST ROW */}
         <div className="forecast-container">
             {forecastData.slice(0, 5).map((day, index) => (
                 <div key={index} className="forecast-item">

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import WeatherCard from './WeatherCard';
 import './App.css';
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
-  const [forecastData, setForecastData] = useState(null); // New state for forecast
-  const [city, setCity] = useState('Toronto');
+  const [forecastData, setForecastData] = useState(null);
+  const [city, setCity] = useState('');
   const [search, setSearch] = useState('');
   const [error, setError] = useState('');
 
@@ -14,16 +14,13 @@ function App() {
 
   const fetchWeather = async (cityName) => {
     try {
-      // 1. Fetch Current Weather
       const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
       const weatherRes = await axios.get(weatherUrl);
       setWeatherData(weatherRes.data);
 
-      // 2. Fetch Forecast
       const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric`;
       const forecastRes = await axios.get(forecastUrl);
       
-      // Filter to get one reading per day (e.g., at 12:00 PM)
       const dailyData = forecastRes.data.list.filter(reading => reading.dt_txt.includes("12:00:00"));
       setForecastData(dailyData);
 
@@ -35,10 +32,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    fetchWeather(city);
-  }, []);
-
   const handleSearch = (e) => {
     e.preventDefault();
     if (search) {
@@ -49,7 +42,15 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div 
+      className="app-container"
+      style={{
+        backgroundImage: 'url(/clouds.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <h1>Weather App</h1>
       <form onSubmit={handleSearch} className="search-form">
         <input
@@ -62,9 +63,25 @@ function App() {
       </form>
       {error && <div className="error-message">{error}</div>}
       
-      {/* Pass BOTH data sets to the card */}
-      {weatherData && forecastData && (
+      {/* IF we have data, show the card. IF NOT, show the Welcome Message */}
+      {weatherData && forecastData ? (
         <WeatherCard weatherData={weatherData} forecastData={forecastData} />
+      ) : (
+        <div className="welcome-message" style={{ 
+            textAlign: 'center', 
+            color: '#333', 
+            marginTop: '50px',
+            backgroundColor: 'rgba(255,255,255,0.8)',
+            padding: '30px',
+            borderRadius: '20px'
+        }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '10px', color: '#5c6bc0' }}>
+            Ready to Check the Weather? ☀️
+          </h2>
+          <p style={{ fontSize: '1.2rem', color: '#555' }}>
+            Type a city name above and click search
+          </p>
+        </div>
       )}
     </div>
   );

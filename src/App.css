@@ -1,6 +1,5 @@
 .app-container {
   min-height: 100vh;
-  background-color: #f0f2f5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,15 +9,18 @@
 
 h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: white;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.6);
   margin-bottom: 30px;
   text-transform: uppercase;
+  z-index: 1;
 }
 
 .search-form {
   display: flex;
   gap: 10px;
   margin-bottom: 40px;
+  z-index: 1;
 }
 
 input {
@@ -28,10 +30,12 @@ input {
   border-radius: 30px;
   width: 300px;
   outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 input:focus {
   border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 button {
@@ -43,6 +47,7 @@ button {
   border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 button:hover {
@@ -50,9 +55,11 @@ button:hover {
 }
 
 .error-message {
-  color: #dc3545;
+  color: #721c24;
   background-color: #f8d7da;
   padding: 10px 20px;
   border-radius: 5px;
   margin-bottom: 20px;
+  font-weight: bold;
+  z-index: 1;
 }
