@@ -56,7 +56,14 @@ This project consumes two primary endpoints from OpenWeatherMap. The specific fi
 | **Predictability** | *Static/Calculated* | `71%` |
 
 ## 📸 Screen Previews
+POSTMAN
+![PostMan Screenshot](https://github.com/user-attachments/assets/678262a6-72be-4296-9e3a-aa1ab7341832)
 
+WELCOME SCREEN
+![WelcomeScreen-Vercel](https://github.com/user-attachments/assets/d4d49b8c-c915-47bb-a35f-d6ed60092dc1)
+
+WEATHER CARD
+![Vercel-DeployedApp](https://github.com/user-attachments/assets/cf3df299-b0de-41af-9fbb-5debde18ab89)
 
 ---
 **Assignment Submission for COMP 3123**
