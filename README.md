@@ -4,7 +4,7 @@
 **Course:** COMP 3123 - Full Stack Development I
 
 ## 🚀 Deployment
-**Live App:** 🔗 **[VERCEL LINK]**
+**Live App:** 🔗 **https://comp-3123-lab-test02.vercel.app/**
 
 ## 📝 Project Overview
 Weather App is a responsive weather dashboard developed as part of Lab Test 2. It leverages React hooks (`useState`, `useEffect`) to fetch real-time meteorological data and future forecasts. The application features a modern, card-based UI with dynamic background integration and a built-in digital clock.
@@ -56,7 +56,7 @@ This project consumes two primary endpoints from OpenWeatherMap. The specific fi
 | **Predictability** | *Static/Calculated* | `71%` |
 
 ## 📸 Screen Previews
-*(Please refer to the attached DOCX submission file for high-resolution screenshots of the Welcome Screen, City Search Results, and Postman API Validation.)*
+
 
 ---
 **Assignment Submission for COMP 3123**
