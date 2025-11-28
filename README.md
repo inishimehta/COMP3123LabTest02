@@ -58,12 +58,15 @@ This project consumes two primary endpoints from OpenWeatherMap. The specific fi
 ## 📸 Screen Previews
 POSTMAN
 ![PostMan Screenshot](https://github.com/user-attachments/assets/678262a6-72be-4296-9e3a-aa1ab7341832)
+Description: A JSON response from the OpenWeatherMap API illustrating the data structure used by the application. This validates successful API connectivity and shows the raw data fields—such as coordinates, main weather stats, and system information—that are parsed and displayed in the React frontend.
 
 WELCOME SCREEN
 ![WelcomeScreen-Vercel](https://github.com/user-attachments/assets/d4d49b8c-c915-47bb-a35f-d6ed60092dc1)
+Description: The initial landing page of the application. It features a clean, user-friendly interface with a prominent search bar and a welcome message, prompting users to input a city name to begin checking the weather.
 
 WEATHER CARD
 ![Vercel-DeployedApp](https://github.com/user-attachments/assets/cf3df299-b0de-41af-9fbb-5debde18ab89)
+Description: The main application dashboard displaying real-time weather data for a searched city. The interface presents the current temperature, weather condition, and local time, alongside detailed atmospheric metrics such as humidity, wind speed, and air pressure. The bottom section provides a 5-day forecast preview to show upcoming weather trends.
 
 ---
 **Assignment Submission for COMP 3123**
